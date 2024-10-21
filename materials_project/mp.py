@@ -35,18 +35,18 @@ def get_first_column(file_path):
 
 
 def get_mp_structure():
-    mp_ids = get_first_column("/mp/05142024_is_magnetic_false.csv")
+    mp_ids = get_first_column("./05142024_is_magnetic_false.csv")
     print(f"Number of materials: {len(mp_ids)}, first 5: {mp_ids[:5]}")
     req_fields = ["material_id", "formula_pretty", "structure"]
     with SummaryRester(api_key=MPI_KEY) as mpr:
         # every 500 materials generate a json file
-        for i in range(0, len(mp_ids), 500):
-            data = mpr.search(material_ids=mp_ids[i:i+500], fields=req_fields)
+        for i in range(0, 600, 100):
+            data = mpr.search(material_ids=mp_ids[i:i+100], fields=req_fields)
             table = {}
             for field in req_fields:
                 print(f"Field: {field}")
                 table[field] = [d.__getattribute__(field) for d in data]
-            dumpfn(table, f"/mp/out/mp_structure_{i}-{i+500}.json", indent=4)
+            dumpfn(table, f"./05142024/mp_structure_{i}-{i+100}.json", indent=4)
 
 if __name__ == "__main__":
     # get_data()
