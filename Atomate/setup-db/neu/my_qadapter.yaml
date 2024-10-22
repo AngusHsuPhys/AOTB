@@ -1,13 +1,13 @@
 _fw_name: CommonAdapter
 _fw_q_type: SLURM
-_fw_template_file: /work/bansil/angus.h/atomate/config/queue_template.slurm
-rocket_launch: rlaunch -c /work/bansil/angus.h/atomate/config singleshot > out
-nodes: 1
-ntasks_per_node: 32
-walltime: 00:30:00
-queue: bansil
-job_name: test
-pre_rocket: module load singularity  #\necho '110' >> OPTCELL"
+_fw_template_file: /global/cfs/cdirs/m225/angush/atomate/config/queue_template.slurm
+rocket_launch: rlaunch -c /global/cfs/cdirs/m225/angush/atomate/config singleshot > out
+# nodes: 1
+# ntasks_per_node: 32
+# walltime: 00:30:00
+# queue: bansil
+# job_name: test
+pre_rocket:
 post_rocket: null
-mem: 100G
-logdir: /work/bansil/angus.h/atomate/logs
+# mem: 100G
+logdir: /global/cfs/cdirs/m225/angush/atomate/logs

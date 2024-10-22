@@ -1,5 +1,5 @@
 host: localhost
-logdir: /work/bansil/angus.h/atomate/logs
+logdir: /global/cfs/cdirs/m225/angush/atomate/logs
 name: AOTB
 password: angus
 port: 9999
