@@ -1,9 +1,10 @@
 name: AOTB
-category: ''
+category: '05142024'
 query: '{}'
 env:
   db_file: /global/cfs/cdirs/m225/angush/atomate/config/db.json
   openmx_dft_data_path: /global/homes/a/angush/openmx/DFT_DATA19
   openmx_cmd: srun -n 32 /global/homes/a/angush/openmx/source/openmx
-  deeph_preprocess_cmd: shifter --image=tsaie79/deeph-preprocess --volume=`pwd`:/data main /data
+  nt: 8
+  deeph_preprocess_cmd: shifter --image=angushtw/deeph-custom:0.2 --volume=`pwd`:/data main /data
 scratch_dir:
